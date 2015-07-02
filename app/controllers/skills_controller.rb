@@ -26,6 +26,14 @@ def edit
   @skill = Skill.find(params[:id])
 end
 
+def update
+  @skill = Skill.find(params[:id])
+  if @skill.update(skill_params)
+    redirect_to skill_path(@skill)
+  else
+    render :edit
+  end
+end
 private
   def skill_params
     params.require(:skill).permit(:name, :description)
