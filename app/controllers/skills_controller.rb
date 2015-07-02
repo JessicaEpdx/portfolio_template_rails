@@ -22,6 +22,10 @@ def show
   @skill = Skill.find(params[:id])
 end
 
+def edit
+  @skill = Skill.find(params[:id])
+end
+
 private
   def skill_params
     params.require(:skill).permit(:name, :description)
