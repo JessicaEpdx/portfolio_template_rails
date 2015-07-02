@@ -16,23 +16,30 @@ def create
 end
 
 def show
-  @project = Project.find(params[:id])
   @skill = Skill.find(params[:skill_id])
+  @project = Project.find(params[:id])
 end
 
 def edit
-  @project = Project.find(params[:id])
   @skill = Skill.find(params[:skill_id])
+  @project = Project.find(params[:id])
 end
 
 def update
-  @project = Project.find(params[:id])
   @skill = Skill.find(params[:skill_id])
+  @project = Project.find(params[:id])
   if @project.update(project_params)
     redirect_to skill_project_path(@skill, @project)
   else
     render :new
   end
+end
+
+def destroy
+  @skill = Skill.find(params[:skill_id])
+  @project = Project.find(params[:id])
+  @project.destroy()
+  redirect_to skill_path(@skill)
 end
 
 private

@@ -37,6 +37,9 @@ end
 
 def destroy
   @skill = Skill.find(params[:id])
+  @skill.projects.each do |project|
+    project.destroy()
+  end
   @skill.destroy()
   redirect_to root_path
 end
