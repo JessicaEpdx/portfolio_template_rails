@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-sm-12 secondary-nav edit-delete-project">
+    <%= link_to 'Back to Skill', skill_path(@skill) %> |
+    <%= link_to 'Edit Project', edit_skill_project_path(@skill, @project) %> |
+    <%= link_to 'Delete Skill', skill_path(@skill),
+                                :data => {:confirm => "Are you sure?",
+                                        :method => "delete"} %>
+  </div>
+<div class="row">
+  <div class="col-sm-9">
+    <h1><%= @project.name %></h1>
+    <h5><%= @project.description %></h5>
+  </div>
+</div>
