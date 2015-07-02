@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-sm-8">
       <div class="profile profile-name">
-        <%= profile.name %>
+        <h1><%= profile.name %></h1>
       </div>
 
       <div class="profile profile-email">
@@ -13,11 +13,11 @@
         <%= profile.description %>
       </div>
 
-      <div class="profile profile-description">
+      <div class="profile profile-linkedin">
         <%= link_to 'LinkedIn', profile.linkedin, :class => 'linkedin-link' %>
       </div>
 
-      <div class="profile profile-description">
+      <div class="profile profile-github">
         <%= link_to 'Github', profile.github, :class => 'github-link'%>
       </div>
 
@@ -28,3 +28,12 @@
     </div>
   </div>
 <% end %>
+
+<div class="row">
+  <h3>What I can do...</h3>
+  <% @skills.each do |skill| %>
+      <div class="col-sm-3 skill-name">
+        <%= link_to skill.name, skill_path(skill) %>
+      </div>
+  <% end %>
+</div>
