@@ -6,7 +6,7 @@
       </div>
 
       <div class="profile profile-email">
-        <%= profile.email %>
+        <%= mail_to profile.email %>
       </div>
 
       <div class="profile profile-description">
@@ -32,7 +32,7 @@
 <div class="row">
   <h3>What I can do...</h3>
   <% @skills.each do |skill| %>
-      <div class="col-sm-3 skill-name">
+      <div class="well col-sm-3 skill-name">
         <%= link_to skill.name, skill_path(skill) %>
       </div>
   <% end %>

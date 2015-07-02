@@ -21,26 +21,63 @@
     font-weight: 300;
  }
 
+ a:hover{
+   text-decoration:none;
+ }
+
 .profile{
   margin:10px;
 }
 
 .profile-image{
-  width:100%;
+  width:75%;
 }
 
 .navbar{
-  margin-bottom:60px;
+  margin-bottom:50px;
+}
+
+.projects{
+  text-align:center;
+
 }
 
 .thumbnail{
-  width:150px;
+  width:50%;
+  height:auto;
+  margin:0 auto;
 }
 
 .project{
-  margin:15px;
+  margin:20px;
 }
+
 .project-image{
   width:100%;
   margin:20px 0px;
+  height:auto;
+  margin:0 auto;
+}
+
+.project-name{
+  font-size:20px;
+}
+
+.skill-name{
+  text-align:center;
+  padding:10px;
+  width:20%;
+  margin:2%;
+  margin-top:5px;
+}
+
+.well{
+
+}
+.skill-name a{
+  font-size:25px;
+}
+
+.skill-name a:hover{
+  font-weight:600;
 }

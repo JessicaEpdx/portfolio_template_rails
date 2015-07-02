@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-sm-12 secondary-nav edit-delete-skill">
+  <div class=" well col-sm-12 secondary-nav edit-delete-skill">
     <%= link_to 'Add Project', new_skill_project_path(@skill, @project) %> |
     <%= link_to 'Edit Skill', edit_skill_path(@skill) %> |
     <%= link_to 'Delete Skill', skill_path(@skill),
@@ -8,11 +8,13 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-sm-9">
+  <div class="col-sm-7">
     <h1><%= @skill.name %></h1>
-    <h5><%= @skill.description %></h5>
+    <div class="skill-description">
+      <%= @skill.description %>
+    </div>
   </div>
-  <div class="col-sm-3">
+  <div class="col-sm-5 projects">
     <% if @skill.projects.any? %>
       <h3><%= @skill.name %> Projects</h3>
       <% @skill.projects.each do |project| %>
