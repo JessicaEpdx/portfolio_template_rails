@@ -34,6 +34,13 @@ def update
     render :edit
   end
 end
+
+def destroy
+  @skill = Skill.find(params[:id])
+  @skill.destroy()
+  redirect_to root_path
+end
+
 private
   def skill_params
     params.require(:skill).permit(:name, :description)
