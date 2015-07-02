@@ -1,7 +1,6 @@
 class Project < ActiveRecord::Base
 
-  def index
-
-  end
+  validates_presence_of :name
+  validates_presence_of :description
 
 end
