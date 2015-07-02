@@ -8,7 +8,9 @@
   </div>
 <div class="row">
   <div class="col-sm-9">
+    <img class="project-image" src="<%=@project.image_url%>" />
     <h1><%= @project.name %></h1>
     <h5><%= @project.description %></h5>
+    <h5><%= link_to 'Project Link', @project.url %></h5>
   </div>
 </div>

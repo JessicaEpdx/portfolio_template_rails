@@ -44,7 +44,7 @@ end
 
 private
   def project_params
-    params.require(:project).permit(:name, :description, :url)
+    params.require(:project).permit(:name, :description, :url, :image_url)
   end
 
 end
