@@ -1,0 +1,30 @@
+<% @profiles.each do |profile| %>
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="profile profile-name">
+        <%= profile.name %>
+      </div>
+
+      <div class="profile profile-email">
+        <%= profile.email %>
+      </div>
+
+      <div class="profile profile-description">
+        <%= profile.description %>
+      </div>
+
+      <div class="profile profile-description">
+        <%= link_to 'LinkedIn', profile.linkedin, :class => 'linkedin-link' %>
+      </div>
+
+      <div class="profile profile-description">
+        <%= link_to 'Github', profile.github, :class => 'github-link'%>
+      </div>
+
+      </div>
+
+    <div class="col-sm-4">
+        <img class="profile profile-image" src="<%=profile.image%>" />
+    </div>
+  </div>
+<% end %>
