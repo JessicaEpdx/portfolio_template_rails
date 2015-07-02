@@ -25,6 +25,16 @@ def edit
   @skill = Skill.find(params[:skill_id])
 end
 
+def update
+  @project = Project.find(params[:id])
+  @skill = Skill.find(params[:skill_id])
+  if @project.update(project_params)
+    redirect_to skill_project_path(@skill, @project)
+  else
+    render :new
+  end
+end
+
 private
   def project_params
     params.require(:project).permit(:name, :description, :url)
