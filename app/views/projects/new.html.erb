@@ -1,2 +1,8 @@
-Hey new
-Projects
+<div class="row">
+  <div class="col-sm-6">
+    <h2>Add Projects to <%= @skill.name%></h2>
+  </div>
+  <div class="col-sm-6">
+    <%= render 'form', :object => [@skill, @project]%>
+  </div>
+</div>
