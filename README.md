@@ -10,44 +10,51 @@ Portfolio Template allows people to create a profile for themselves and then inc
 
 ### Setup ###
 
-clone to your Desktop 
+clone to your Desktop
 
 
-if you want to see an example of what it looks like 
+if you want to see an example of what it looks like
 
 
     $cd Desktop/portfolio_template_rails
     $postgres
-  
+
     $rake db:create
     $rake db:migrate
-    $rake db:seed 
+    $rake db:seed
     $rake db:test:prepare
-    $rails s 
+    $rails s
 
 Go to "www.localhost/3000"
-    
-    
+
+
 if you want to make your own
 
     $cd Desktop/portfolio_template_rails
     $postgres
-  
+
     $rake db:create
     $rake db:migrate
     $rake db:test:prepare
-  
-    $rails c 
-    $Profile.create({name:"<Your Name>", description:"<About You>", email:"<Your Email>", github:"<Github Link for Developers>, linkedin:"<Your Linked In URL>", image:"<Your Image URL>"}) 
+
+    $rails c
+    $User.create({name:"<Your Name>", username:"<Your Username>", password:"<Your Password>", password_confirmation:"<Confirm Your Password>", description:"<About You>", email:"<Your Email>", github:"<Github Link for Developers>, linkedin:"<Your Linked In URL>", image:"<Your Image URL>"})
+    
     $rails s
 
 Go to "www.localhost/3000"
+
+### Heroku ###
+
+See Example of program:
+[Deployed on Heroku](https://mysterious-spire-4862.herokuapp.com/)
 
 ### Debugging ###
 
 If there are any bugs contact JessicaEpdx@gmail.com
 
 ### License ###
+
 This is free and unencumbered software released into the public domain.
 
 Anyone is free to copy, modify, publish, use, compile, sell, or
