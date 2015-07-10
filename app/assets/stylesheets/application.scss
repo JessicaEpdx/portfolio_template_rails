@@ -16,14 +16,31 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
- body {
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    font-weight: 300;
- }
+body {
+  display: block;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+}
 
- a:hover{
-   text-decoration:none;
- }
+.comments{
+  display:none;
+}
+
+.hide-comments:focus ~ .comments {
+  display: none;
+}
+
+.show-comments:focus ~ .comments {
+  display: block;
+}
+
+.hide-comments:hover, .show-comments:hover{
+  cursor:pointer;
+}
+
+a:hover{
+  text-decoration:none;
+}
 
 .profile{
   margin:10px;
@@ -127,15 +144,18 @@
   background-color:purple;
   color:white;
   margin-top:40px;
+  padding-bottom:5px;
 }
 
 .comment-header{
   margin-left:50px;
+  margin-bottom:5px;
 }
 
 .comment-content{
   color:black;
   font-size:12px;
+  padding-top:10px;
 }
 
 .comment-image{
@@ -148,3 +168,13 @@
   margin-top:-50px;
   margin-left:-50px;
 }
+//
+// #cont {
+//   display: none;
+// }
+// .show:focus + .hide {
+//   display: inline;
+// }
+// .show:focus + .hide + #cont {
+//   display: block;
+// }
