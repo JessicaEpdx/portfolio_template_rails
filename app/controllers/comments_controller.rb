@@ -6,6 +6,15 @@ class CommentsController < ApplicationController
   end
 
   def create
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.new(comment_params)
+    @comment.author_id = current_user.id
+    if @comment.save
+      flash[:notice] = "You added a comment to the post titled: " + @post.title
+      redirect_to posts_path
+    else
+      render :new
+    end
   end
 
   def edit

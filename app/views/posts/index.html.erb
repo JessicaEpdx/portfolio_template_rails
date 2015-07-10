@@ -9,19 +9,23 @@
 <% end %>
 
 <% if @posts.any? %>
+
   <% @posts.each do |post| %>
+
     <div class="post well post-header">
       <%= post.created_at.to_date.strftime('%A')%>
       <%=post.created_at.to_date.strftime('%B')%>
       <%=post.created_at.to_date.strftime('%d')%>,
       <%=post.created_at.to_date.strftime('%Y') %>
       <div class="post post-updated-at">
+
         <% if post.created_at != post.updated_at %>
           <em>Updated <%= post.updated_at.to_date.strftime('%A')%>
           <%=post.updated_at.to_date.strftime('%B')%>
           <%=post.updated_at.to_date.strftime('%d')%>,
           <%=post.updated_at.to_date.strftime('%Y') %></em>
         <% end %>
+
       </div>
       <h3><%= post.title %></h3>
       <div class="well post">
@@ -39,7 +43,26 @@
         <% end %>
       <% end %>
     </div>
+    <div class="comment well">
+      <% if post.comments.any? %>
+        <% post.comments.each do |comment| %>
+        <%=comment.created_at.to_date.strftime('%A')%>
+        <%=comment.created_at.to_date.strftime('%B')%>
+        <%=comment.created_at.to_date.strftime('%d')%>,
+        <%=comment.created_at.to_date.strftime('%Y') %>
+        <h4><%= comment.title %></h4>
+        <div class="well comment-content">
+          <%= comment.content %>
+        </div>
+        <% user = User.find(comment.author_id) %>
+        by <%= link_to user.username, user_path(user), class:'post-link' %>
+
+        <% end %>
+      <% end %>
+    </div>
+
   <% end %>
+
 <% else %>
   <h3>There are no posts yet :( Check back soon :)</h3>
 <% end %>
