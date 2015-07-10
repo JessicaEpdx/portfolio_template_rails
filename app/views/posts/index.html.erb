@@ -16,6 +16,14 @@
       <%=post.created_at.to_date.strftime('%B')%>
       <%=post.created_at.to_date.strftime('%d')%>,
       <%=post.created_at.to_date.strftime('%Y') %>
+      <div class="post post-updated-at">
+        <% if post.created_at != post.updated_at %>
+          <em>Updated <%= post.updated_at.to_date.strftime('%A')%>
+          <%=post.updated_at.to_date.strftime('%B')%>
+          <%=post.updated_at.to_date.strftime('%d')%>,
+          <%=post.updated_at.to_date.strftime('%Y') %></em>
+        <% end %>
+      </div>
       <h3><%= post.title %></h3>
       <div class="well post-content">
         <%= post.content %>
