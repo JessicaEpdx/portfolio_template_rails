@@ -14,18 +14,17 @@
           <%= profile.description %>
         </div>
 
-        <div class="profile profile-linkedin">
-          <%= link_to 'LinkedIn', profile.linkedin, :class => 'linkedin-link' %>
         </div>
 
-        <div class="profile profile-github">
-          <%= link_to 'Github', profile.github, :class => 'github-link'%>
-        </div>
-
-        </div>
-
-      <div class="col-sm-4">
+      <div class="col-sm-4 profile-col-2">
           <img class="profile profile-image" src="<%=profile.image%>" />
+          <div class="profile profile-linkedin">
+            <%= link_to image_tag('linkedin'), profile.linkedin, :class => 'linkedin-link' %>
+          </div>
+
+          <div class="profile profile-github">
+            <%= link_to image_tag('github'), profile.github, :class => 'github-link'%>
+          </div>
       </div>
     </div>
   <% end %>
