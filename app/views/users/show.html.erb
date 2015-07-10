@@ -7,19 +7,24 @@
     <div class="profile profile-description">
       <%= @user.description %>
     </div>
-
-    <div class="profile profile-linkedin">
-      <%= link_to 'LinkedIn', @user.linkedin, :class => 'linkedin-link' %>
-    </div>
-
-    <div class="profile profile-github">
-      <%= link_to 'Github', @user.github, :class => 'github-link'%>
-    </div>
-
+    <% if @user.linkedin %>
+      <div class="profile profile-linkedin">
+        <%= link_to 'LinkedIn', @user.linkedin, :class => 'linkedin-link' %>
+      </div>
+    <% end %>
+    <% if @user.github %>
+      <div class="profile profile-github">
+        <%= link_to 'Github', @user.github, :class => 'github-link'%>
+      </div>
+    <% end %>
     </div>
 
   <div class="col-sm-4">
-      <img class="profile profile-image" src="<%=@user.image%>" />
+      <% if @user.image %>
+        <img class="profile profile-image" src="<%=@user.image%>" />
+      <% else %>
+        <%= image_tag 'empty_image.jpg', class:'profile-image'%>
+      <% end %>
       <div class="profile profile-name">
         <h5>Username: <%= @user.username %></h5>
       </div>
