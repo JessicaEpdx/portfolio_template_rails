@@ -25,6 +25,7 @@
       </div>
       <h3><%= post.title %></h3>
       <div class="well post-content">
+        <img class="post post-image" src="<%=post.image%>" /><br />
         <%= post.content %>
       </div>
       <% if user_signed_in? %>
