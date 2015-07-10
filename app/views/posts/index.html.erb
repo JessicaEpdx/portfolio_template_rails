@@ -1,7 +1,13 @@
 <% if @posts.any? %>
   <% @posts.each do |post| %>
-    <%= post.title %>
-    <%= post.content %>
+    <div class="post well">
+      <%= post.created_at.to_date.strftime('%A')%>
+      <%=post.created_at.to_date.strftime('%B')%>
+      <%=post.created_at.to_date.strftime('%d')%>,
+      <%=post.created_at.to_date.strftime('%Y') %>
+      <h3><%= post.title %></h3>
+      <%= post.content %>
+    </div>
   <% end %>
 <% else %>
   <h3>There are no posts yet :( Check back soon :)</h3>
