@@ -1,0 +1,18 @@
+<% if user_signed_in? %>
+  <% if current_user.admin %>
+    <div class="row">
+      <div class="col-sm-6">
+        <h2>New Post</h2>
+        <h5>Add a post to your blog!</h5>
+
+      </div>
+      <div class="col-sm-6">
+        <%= render 'form', :object => @post%>
+      </div>
+    </div>
+  <% else %>
+    <h5>Permission Denied, sorry!</h5>
+  <% end %>
+<% else %>
+    <h5> Please Login. </h5>
+<% end %>

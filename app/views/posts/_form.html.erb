@@ -1,0 +1,11 @@
+<%= form_for object do |f| %>
+  <div class="form-group">
+    <%= f.text_field :title, :placeholder => "Post Title" %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :content, :placeholder => "Post Content" %>
+  </div>
+  <%= f.submit :class => 'btn btn-warning' %>
+<% end %>
+
+<%= render 'layouts/errors', :object => object %>
