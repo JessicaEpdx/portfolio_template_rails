@@ -1,7 +1,7 @@
 class SkillsController < ApplicationController
 
 def index
-  @profiles = Profile.all()
+  @users = User.all()
   @skills = Skill.all()
 end
 

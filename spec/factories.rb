@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory(:profile) do
+  factory(:user) do
     name('New User')
     linkedin('http://www.linkedin.com')
     github('http://www.github.com')
