@@ -11,7 +11,7 @@ gem 'pry'
 gem 'bootstrap-sass'
 gem 'bcrypt', require: "bcrypt"
 gem 'devise'
-gem 'rails_12factor', group: :production
+gem 'rails_12factor'
 
 group :development do
   gem 'byebug'
