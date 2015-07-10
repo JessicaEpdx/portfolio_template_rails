@@ -39,7 +39,7 @@ if you want to make your own
 
     $rails c
     $User.create({name:"<Your Name>", username:"<Your Username>", password:"<Your Password>", password_confirmation:"<Confirm Your Password>", description:"<About You>", email:"<Your Email>", github:"<Github Link for Developers>, linkedin:"<Your Linked In URL>", image:"<Your Image URL>"})
-    
+
     $rails s
 
 Go to "www.localhost/3000"
@@ -48,6 +48,23 @@ Go to "www.localhost/3000"
 
 See Example of program:
 [Deployed on Heroku](https://mysterious-spire-4862.herokuapp.com/)
+
+small heroku bug: working to get assets/images files to deploy to heroku
+
+Login info:
+
+  for admin view:
+
+    email: admin@admin.com
+
+    password: 12345678
+
+
+  for non-admin view:
+
+    email: coolio@coolio.com
+
+    password:12345678
 
 ### Debugging ###
 
