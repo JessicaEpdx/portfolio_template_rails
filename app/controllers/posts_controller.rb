@@ -24,6 +24,13 @@ class PostsController < ApplicationController
   end
 
   def update
+    @post = Post.find(params[:id])
+    if @post.update(post_params)
+      flash[:notice] = "You successfully edited the post titled: " + @post.title
+      redirect_to posts_path
+    else
+      render :new
+    end
   end
 
   def destroy
