@@ -2,21 +2,31 @@ require 'rails_helper'
 
 describe 'the edit project path' do
   it 'visits the edit project page' do
-    skill = Skill.create({name: 'Ruby', description: 'Im so skilled'})
-    project = skill.projects.create({name: 'CatBox', description: 'Social Media site for cats', url:'www.github.com', image:"http://www.jessicaengel.com/wp-content/themes/JessTheme/images/catbox.png"})
+    skill = FactoryGirl.create(:skill)
+    project = FactoryGirl.create(:project)
     visit skill_project_path(skill, project)
     click_on 'Edit Project'
-    expect(page).to have_content "Edit CatBox"
+    expect(page).to have_content project.name
   end
 
   it 'edits a new skill' do
-    skill = Skill.create({name: 'Ruby', description: 'Im so skilled'})
-    project = skill.projects.create({name: 'CatBox', description: 'Social Media site for cats', url:'www.github.com', image:"http://www.jessicaengel.com/wp-content/themes/JessTheme/images/catbox.png"})
+    skill = FactoryGirl.create(:skill)
+    project = FactoryGirl.create(:project)
     visit edit_skill_project_path(skill, project)
     fill_in 'project_name', :with => 'CATBOX!'
     fill_in 'project_description', :with => 'Social Media site for cats'
     click_on 'Update Project'
     expect(page).to have_content "CATBOX!"
+  end
+
+  it 'errors when projects are empty' do
+    skill = FactoryGirl.create(:skill)
+    project = FactoryGirl.create(:project)
+    visit edit_skill_project_path(skill, project)
+    fill_in 'project_name', :with => ''
+    fill_in 'project_description', :with => ''
+    click_on 'Update Project'
+    expect(page).to have_content "Name can't be blank"
   end
 
 end

@@ -2,9 +2,9 @@ require 'rails_helper'
 
 describe 'the home page profile display path' do
   it 'visits the home page and displays profile' do
-    Profile.create(name: "Jessica Engel", description: "I'm great!")
+    skill = FactoryGirl.create(:profile)
     visit root_path
-    expect(page).to have_content "Jessica Engel"
+    expect(page).to have_content "New User"
   end
 
 end

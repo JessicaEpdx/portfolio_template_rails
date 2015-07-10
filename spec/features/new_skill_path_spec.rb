@@ -16,4 +16,10 @@ describe 'the add new skill path' do
     expect(page).to have_content "Ruby"
   end
 
+  it 'errors when skills are empty' do
+    visit new_skill_path
+    click_button 'Create Skill'
+    expect(page).to have_content "Name can't be blank"
+  end
+
 end

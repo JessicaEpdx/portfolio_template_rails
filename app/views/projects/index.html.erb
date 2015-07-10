@@ -1,0 +1,14 @@
+<div class="row">
+  <h1>All Projects</h1>
+</div>
+
+<div class="row">
+  <% @projects.each do |project| %>
+    <div class="col-sm-4">
+      <img class="project-image" src="<%=project.image_url%>" />
+      <h1><%= project.name %></h1>
+      <h5><%= project.description %></h5>
+      <h5><%= link_to 'Project Link', project.url %></h5>
+    </div>
+  <% end %>
+</div>

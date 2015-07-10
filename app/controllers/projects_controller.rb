@@ -1,5 +1,9 @@
 class ProjectsController < ApplicationController
 
+def index
+  @projects = Project.all
+end
+
 def new
   @skill = Skill.find(params[:skill_id])
   @project = @skill.projects.new()

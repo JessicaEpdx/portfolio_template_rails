@@ -2,11 +2,20 @@ require 'rails_helper'
 
 describe 'the delete skill path' do
   it 'deletes a skill' do
-    Skill.create({name: 'Ruby', description: 'Im so skilled'})
-    visit root_path
-    click_on 'Ruby'
+    skill = FactoryGirl.create(:skill)
+    visit skill_path(skill)
     click_on 'Delete Skill'
-    expect(page).to have_content "Skills"
+    visit root_path
+    expect(page).to_not have_content("New Skill")
+  end
+
+  it 'deletes projects connected to deleted skill' do
+    skill = FactoryGirl.create(:skill)
+    project = skill.projects.create({name: "New Project", description:"Description"})
+    visit skill_path(skill)
+    click_on 'Delete Skill'
+    visit projects_path
+    expect(page).to_not have_content("New Project")
   end
 
 end
