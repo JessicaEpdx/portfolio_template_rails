@@ -1,11 +1,17 @@
-<div class="row">
-  <div class="col-sm-12 secondary-nav edit-delete-project well">
-    <%= link_to 'Back to' + " " + @skill.name, skill_path(@skill) %> |
-    <%= link_to 'Edit Project', edit_skill_project_path(@skill, @project) %> |
-    <%= link_to 'Delete Project', skill_project_path(@skill, @project),
-                                :data => {:confirm => "Are you sure?",
-                                        :method => "delete"} %>
+<% if user_signed_in? %>
+  <% if current_user.admin %>
+  <div class="row">
+    <div class="col-sm-12 secondary-nav edit-delete-project well">
+      <%= link_to 'Back to' + " " + @skill.name, skill_path(@skill) %> |
+      <%= link_to 'Edit Project', edit_skill_project_path(@skill, @project) %> |
+      <%= link_to 'Delete Project', skill_project_path(@skill, @project),
+                                  :data => {:confirm => "Are you sure?",
+                                          :method => "delete"} %>
+    </div>
   </div>
+  <% end %>
+<% end %>
+
 <div class="row">
   <div class="col-sm-9 project">
     <h1><%= @project.name %></h1>
