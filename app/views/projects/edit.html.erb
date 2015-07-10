@@ -1,15 +1,23 @@
-<div class="row">
-  <div class="col-sm-12 well">
-    <%= link_to 'Back to' + " " + @skill.name, skill_path(@skill) %> |
-    <%= link_to 'Back to' + " " + @project.name, skill_project_path(@skill, @project) %>
-  </div>
-</div>
+<% if user_signed_in? %>
+  <% if current_user.admin %>
+    <div class="row">
+        <div class="col-sm-12 well">
+          <%= link_to 'Back to' + " " + @skill.name, skill_path(@skill) %> |
+          <%= link_to 'Back to' + " " + @project.name, skill_project_path(@skill, @project) %>
+        </div>
+      </div>
 
-<div class="row">
-  <div class="col-sm-6">
-    <h2>Edit <%=@project.name%></h2>
-  </div>
-  <div class="col-sm-6">
-    <%= render 'form', :object => [@skill, @project]%>
-  </div>
-</div>
+      <div class="row">
+        <div class="col-sm-6">
+          <h2>Edit <%=@project.name%></h2>
+        </div>
+        <div class="col-sm-6">
+          <%= render 'form', :object => [@skill, @project]%>
+        </div>
+      </div>
+  <% else %>
+    <h5>Sorry, Permission Denied.</h5>
+  <% end %>
+<% else %>
+  <h5>Please Login</h5>
+<% end %>
