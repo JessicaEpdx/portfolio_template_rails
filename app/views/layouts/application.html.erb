@@ -25,6 +25,26 @@
           <ul class="nav navbar-nav special-color">
             <li><%= link_to 'Add Skills', new_skill_path%></li>
           </ul>
+                <ul class="nav navbar-nav navbar-right special-color">
+
+              <li class="dropdown">
+                <% if user_signed_in? %>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                  <%= current_user.username %> <span class="caret"></span>
+                </a>
+                <% else %>
+                <li><%= link_to "Sign up", new_user_registration_path %></li>
+                <li><%= link_to "Login", new_user_session_path %></li>
+              </a>
+              <% end %>
+              <ul class="dropdown-menu">
+                <% if user_signed_in? %>
+                <li><%= link_to "Edit account", edit_user_registration_path %></li>
+                <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+                <li><%= link_to "User Profile", user_path(current_user) %></li>
+                <% end %>
+              </ul>
+            </li>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>

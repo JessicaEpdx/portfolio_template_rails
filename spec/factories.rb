@@ -1,6 +1,7 @@
 FactoryGirl.define do
   factory(:user) do
     name('New User')
+    username('NewUsername')
     linkedin('http://www.linkedin.com')
     github('http://www.github.com')
     email('NewUser@somewhere.com')
