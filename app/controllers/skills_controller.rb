@@ -12,8 +12,10 @@ end
 def create
   @skill = Skill.new(skill_params)
   if @skill.save
+    flash[:notice] = "You've added a skill!"
     redirect_to root_path
   else
+    flash[:alert] = "Oops! Try Again"
     render :new
   end
 end
@@ -29,6 +31,7 @@ end
 def update
   @skill = Skill.find(params[:id])
   if @skill.update(skill_params)
+    flash[:notice] = "You've edited" + " " + @skill.name
     redirect_to skill_path(@skill)
   else
     render :edit
