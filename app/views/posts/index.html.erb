@@ -1,12 +1,14 @@
 <% if @posts.any? %>
   <% @posts.each do |post| %>
-    <div class="post well">
+    <div class="post well post-header">
       <%= post.created_at.to_date.strftime('%A')%>
       <%=post.created_at.to_date.strftime('%B')%>
       <%=post.created_at.to_date.strftime('%d')%>,
       <%=post.created_at.to_date.strftime('%Y') %>
       <h3><%= post.title %></h3>
-      <%= post.content %>
+      <div class="well post-content">
+        <%= post.content %>
+      </div>
     </div>
   <% end %>
 <% else %>

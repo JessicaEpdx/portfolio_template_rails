@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/Guest/Desktop/portfolio_template_rails/spec/features/delete_project_spec.rb": [
+      "/Users/Guest/Desktop/portfolio_template_rails/spec/features/add_post_path_spec.rb": [
         1,
         null,
         1,
@@ -9,10 +9,7 @@
         1,
         1,
         1,
-        1,
-        1,
-        1,
-        1,
+        0,
         null,
         null,
         null
@@ -38,7 +35,7 @@
         null,
         1,
         1,
-        29,
+        30,
         null,
         null,
         null,
@@ -587,6 +584,22 @@
         1,
         null
       ],
+      "/Users/Guest/Desktop/portfolio_template_rails/spec/features/delete_project_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
       "/Users/Guest/Desktop/portfolio_template_rails/spec/features/delete_skill_spec.rb": [
         1,
         null,
@@ -875,6 +888,33 @@
         null,
         null
       ],
+      "/Users/Guest/Desktop/portfolio_template_rails/app/controllers/posts_controller.rb": [
+        1,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/Guest/Desktop/portfolio_template_rails/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        2,
+        2,
+        null,
+        null,
+        null,
+        null
+      ],
       "/Users/Guest/Desktop/portfolio_template_rails/app/controllers/projects_controller.rb": [
         1,
         null,
@@ -930,25 +970,6 @@
         1,
         1,
         4,
-        null,
-        null,
-        null
-      ],
-      "/Users/Guest/Desktop/portfolio_template_rails/app/controllers/application_controller.rb": [
-        1,
-        null,
-        null,
-        1,
-        null,
-        null,
-        1,
-        null,
-        1,
-        null,
-        1,
-        2,
-        2,
-        null,
         null,
         null,
         null
@@ -1011,6 +1032,6 @@
         null
       ]
     },
-    "timestamp": 1436556143
+    "timestamp": 1436560442
   }
 }
