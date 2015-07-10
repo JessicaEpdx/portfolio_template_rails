@@ -6,6 +6,8 @@ FactoryGirl.define do
     email('NewUser@somewhere.com')
     description('I love web development!')
     image('profile.jpg')
+    password('newuser1')
+    password_confirmation('newuser1')
   end
 
   factory(:skill) do

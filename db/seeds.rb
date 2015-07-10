@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-admin = User.create({name: "Jessica Engel", email: "JessicaEpdx@gmail.com", description: "I have been coding, crafting, and creating since childhood. I'm happiest when I'm learning something new around people who feel the same. I take responsibility for the quality of every project, whether I'm alone or collaborating. Feel free to contact me if you want a hardworking addition to your team, or just feel the need to hear an embarrassingly loud laugh.", github:"https://github.com/JessicaEpdx", linkedin:"https://www.linkedin.com/in/jessengel", image:"https://media.licdn.com/media/AAEAAQAAAAAAAADLAAAAJGZjMjM1ZjU5LTI3MmEtNGQ3MC1iMjQ2LTVkZTNkNzgwOWI1MA.jpg", admin: true})
+admin = User.create({name: "Jessica Engel", password: "11111111", password_confirmation: "11111111", email: "JessicaEpdx@gmail.com", description: "I have been coding, crafting, and creating since childhood. I'm happiest when I'm learning something new around people who feel the same. I take responsibility for the quality of every project, whether I'm alone or collaborating. Feel free to contact me if you want a hardworking addition to your team, or just feel the need to hear an embarrassingly loud laugh.", github:"https://github.com/JessicaEpdx", linkedin:"https://www.linkedin.com/in/jessengel", image:"https://media.licdn.com/media/AAEAAQAAAAAAAADLAAAAJGZjMjM1ZjU5LTI3MmEtNGQ3MC1iMjQ2LTVkZTNkNzgwOWI1MA.jpg", admin: true})
 
 skills = Skill.create([
 {name: "Ruby" , description: "Learning Ruby has allowed me to really dive deep into my understanding of Objects and Classes as well as one to many and many to many relationships."  },
