@@ -2,6 +2,8 @@ require 'rails_helper'
 
 describe 'the edit project path' do
   it 'visits the edit project page' do
+    user = FactoryGirl.create(:user, :admin => true)
+    login_as(user, :scope => :user)
     skill = FactoryGirl.create(:skill)
     project = FactoryGirl.create(:project)
     visit skill_project_path(skill, project)
@@ -10,6 +12,9 @@ describe 'the edit project path' do
   end
 
   it 'edits a new skill' do
+user = FactoryGirl.create(:user, :admin => true)
+    visit '/users/sign_in'
+    login_as(user, :scope => :user)
     skill = FactoryGirl.create(:skill)
     project = FactoryGirl.create(:project)
     visit edit_skill_project_path(skill, project)
@@ -20,6 +25,9 @@ describe 'the edit project path' do
   end
 
   it 'errors when projects are empty' do
+user = FactoryGirl.create(:user, :admin => true)
+    visit '/users/sign_in'
+    login_as(user, :scope => :user)
     skill = FactoryGirl.create(:skill)
     project = FactoryGirl.create(:project)
     visit edit_skill_project_path(skill, project)

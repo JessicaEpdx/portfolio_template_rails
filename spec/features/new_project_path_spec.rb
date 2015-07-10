@@ -2,6 +2,8 @@ require 'rails_helper'
 
 describe 'the new project path' do
   it 'visits the new project path' do
+    user = FactoryGirl.create(:user, :admin => true)
+    login_as(user, :scope => :user)
     skill = FactoryGirl.create(:skill)
     visit skill_path(skill)
     click_on 'Add Project'
@@ -9,6 +11,8 @@ describe 'the new project path' do
   end
 
   it 'adds a new project' do
+    user = FactoryGirl.create(:user, :admin => true)
+    login_as(user, :scope => :user)
     skill = FactoryGirl.create(:skill)
     visit skill_path(skill)
     click_on 'Add Project'
@@ -19,6 +23,8 @@ describe 'the new project path' do
   end
 
   it 'errors when projects are empty' do
+    user = FactoryGirl.create(:user, :admin => true)
+    login_as(user, :scope => :user)
     skill = FactoryGirl.create(:skill)
     visit new_skill_project_path(skill)
     click_button 'Create Project'

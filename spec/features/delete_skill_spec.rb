@@ -2,6 +2,8 @@ require 'rails_helper'
 
 describe 'the delete skill path' do
   it 'deletes a skill' do
+    user = FactoryGirl.create(:user, :admin => true)
+    login_as(user, :scope => :user)
     skill = FactoryGirl.create(:skill)
     visit skill_path(skill)
     click_on 'Delete Skill'
@@ -10,6 +12,8 @@ describe 'the delete skill path' do
   end
 
   it 'deletes projects connected to deleted skill' do
+    user = FactoryGirl.create(:user, :admin => true)
+    login_as(user, :scope => :user)
     skill = FactoryGirl.create(:skill)
     project = skill.projects.create({name: "New Project", description:"Description"})
     visit skill_path(skill)

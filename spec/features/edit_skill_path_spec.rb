@@ -2,6 +2,8 @@ require 'rails_helper'
 
 describe 'the edit skill path' do
   it 'visits the edit skill page' do
+    user = FactoryGirl.create(:user, :admin => true)
+    login_as(user, :scope => :user)
     skill = FactoryGirl.create(:skill)
     visit skill_path(skill)
     click_on 'Edit Skill'
@@ -9,6 +11,8 @@ describe 'the edit skill path' do
   end
 
   it 'edits a new skill' do
+    user = FactoryGirl.create(:user, :admin => true)
+    login_as(user, :scope => :user)
     skill = FactoryGirl.create(:skill)
     visit skill_path(skill)
     click_on 'Edit Skill'
@@ -19,6 +23,8 @@ describe 'the edit skill path' do
   end
 
   it 'errors when skills are empty' do
+    user = FactoryGirl.create(:user, :admin => true)
+    login_as(user, :scope => :user)
     skill = FactoryGirl.create(:skill)
     visit edit_skill_path(skill)
     fill_in 'skill_name', :with => ''
