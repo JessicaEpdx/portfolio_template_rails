@@ -26,9 +26,9 @@ body {
   display:none;
 }
 
-.hide-comments:focus ~ .comments {
-  display: none;
-}
+// .hide-comments:focus ~ .comments {
+//   display: none;
+// }
 
 .show-comments:focus ~ .comments {
   display: block;

@@ -44,8 +44,7 @@
       <% end %>
     </div>
       <% if post.comments.any? %>
-        <span class="show-comments" tabindex="0"><%= post.comments.length %> Comments</span> |
-        <span class="hide-comments" tabindex="0">Hide Comments</span>
+        <span class="show-comments" tabindex="0"><%= post.comments.length %> Comments</span> 
         <span class="comments" >
           <% post.comments.each do |comment| %>
             <div class="comment well">
