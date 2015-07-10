@@ -9,7 +9,7 @@
         1,
         1,
         1,
-        0,
+        1,
         null,
         null,
         null
@@ -35,7 +35,7 @@
         null,
         1,
         1,
-        30,
+        34,
         null,
         null,
         null,
@@ -564,6 +564,8 @@
         1,
         1,
         1,
+        1,
+        null,
         null
       ],
       "/Users/Guest/Desktop/portfolio_template_rails/app/models/user.rb": [
@@ -823,12 +825,31 @@
         null,
         null
       ],
+      "/Users/Guest/Desktop/portfolio_template_rails/spec/models/comment_spec.rb": [
+        1,
+        null,
+        1,
+        2,
+        2,
+        2,
+        null
+      ],
+      "/Users/Guest/Desktop/portfolio_template_rails/app/models/comment.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        null
+      ],
       "/Users/Guest/Desktop/portfolio_template_rails/spec/models/post_spec.rb": [
         1,
         null,
         1,
         2,
         2,
+        2,
+        null,
         null
       ],
       "/Users/Guest/Desktop/portfolio_template_rails/app/models/post.rb": [
@@ -836,7 +857,7 @@
         null,
         1,
         1,
-        null,
+        1,
         null
       ],
       "/Users/Guest/Desktop/portfolio_template_rails/spec/models/project_spec.rb": [
@@ -891,6 +912,43 @@
       "/Users/Guest/Desktop/portfolio_template_rails/app/controllers/posts_controller.rb": [
         1,
         null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
         1,
         0,
         null,
@@ -1032,6 +1090,6 @@
         null
       ]
     },
-    "timestamp": 1436560442
+    "timestamp": 1436563418
   }
 }

@@ -24,13 +24,18 @@
         <% end %>
       </div>
       <h3><%= post.title %></h3>
-      <div class="well post-content">
-        <img class="post post-image" src="<%=post.image%>" /><br />
-        <%= post.content %>
+      <div class="well post">
+        <% if post.image != nil %>
+          <img class="post post-image" src="<%=post.image%>" />
+        <% end %>
+        <div class="post-content">
+          <%= post.content %>
+        </div>
       </div>
       <% if user_signed_in? %>
+        <%= link_to 'Add Comment', new_post_comment_path(post), class:'post-link' %> |
         <% if current_user.admin %>
-          <%= link_to 'Edit Post', edit_post_path(post), class:'edit-post-link' %>
+          <%= link_to 'Edit Post', edit_post_path(post), class:'post-link' %>
         <% end %>
       <% end %>
     </div>
