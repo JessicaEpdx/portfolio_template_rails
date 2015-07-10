@@ -2,8 +2,7 @@
   <% if current_user.admin %>
   <div class="row">
     <div class=" well col-sm-12 secondary-nav edit-delete-skill">
-      <%= link_to 'Add Post', new_post_path(@post) %> |
-
+      <%= link_to 'Add Post', new_post_path(@post) %>
     </div>
   </div>
   <% end %>
@@ -28,6 +27,11 @@
       <div class="well post-content">
         <%= post.content %>
       </div>
+      <% if user_signed_in? %>
+        <% if current_user.admin %>
+          <%= link_to 'Edit Post', edit_post_path(post), class:'edit-post-link' %>
+        <% end %>
+      <% end %>
     </div>
   <% end %>
 <% else %>
