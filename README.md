@@ -47,9 +47,7 @@ Go to "www.localhost/3000"
 ### Heroku ###
 
 See Example of program:
-[Deployed on Heroku](https://mysterious-spire-4862.herokuapp.com/)
-
-small heroku bug: working to get assets/images files to deploy to heroku
+[Deployed on Heroku](https://fast-cove-4035.herokuapp.com/)
 
 Login info:
 

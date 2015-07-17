@@ -16,13 +16,14 @@
         <div class="profile profile-linkedin">
           <%= link_to image_tag('http://uploads.strikinglycdn.com/page/images/icons/linkedin-icon.png'), profile.linkedin, :class => 'linkedin-link' %>
         </div>
-
         <div class="profile profile-github">
           <%= link_to image_tag('http://mihai-varga.github.io/theme/images/github.png'), profile.github, :class => 'github-link'%>
         </div>
     </div>
       <div class="col-sm-4 profile-col-2">
-          <img class="profile profile-image home-image" src="<%=profile.image%>" />
+        <% if profile.image %>
+          <%= image_tag (profile.image), class:'profile profile-image home-image' %>
+        <% end %>
       </div>
     </div>
   <% end %>

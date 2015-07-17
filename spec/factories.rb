@@ -6,7 +6,7 @@ FactoryGirl.define do
     github('http://www.github.com')
     email('NewUser@somewhere.com')
     description('I love web development!')
-    image('profile.jpg')
+    image('http://cdn.sheknows.com/articles/2013/04/Puppy_2.jpg')
     password('newuser1')
     password_confirmation('newuser1')
   end
