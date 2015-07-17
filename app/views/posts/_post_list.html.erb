@@ -1,0 +1,70 @@
+<% if @posts.any? %>
+
+  <% @posts.each do |post| %>
+
+    <div class="post well post-header">
+      <%= post.created_at.to_date.strftime('%A')%>
+      <%=post.created_at.to_date.strftime('%B')%>
+      <%=post.created_at.to_date.strftime('%d')%>,
+      <%=post.created_at.to_date.strftime('%Y') %>
+      <div class="post post-updated-at">
+
+        <% if post.created_at != post.updated_at %>
+          <em>Updated <%= post.updated_at.to_date.strftime('%A')%>
+          <%=post.updated_at.to_date.strftime('%B')%>
+          <%=post.updated_at.to_date.strftime('%d')%>,
+          <%=post.updated_at.to_date.strftime('%Y') %></em>
+        <% end %>
+
+      </div>
+      <h3><%= post.title %></h3>
+      <div class="well post">
+        <% if post.image != nil %>
+          <img class="post post-image" src="<%=post.image%>" />
+        <% end %>
+        <div class="post-content">
+          <%= post.content %>
+        </div>
+      </div>
+      <% if user_signed_in? %>
+        <%= link_to 'Add Comment', new_post_comment_path(post), class:'post-link add-comment', remote: true %>
+        <% if current_user.admin %>
+          <%= link_to 'Edit Post', edit_post_path(post), class:'post-link' %>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="comment-form well">
+    </div>
+      <% if post.comments.any? %>
+        <div class="comments">
+          <% post.comments.each do |comment| %>
+            <div class="comment well">
+              <% user = User.find(comment.author_id) %>
+              <% if user.image %>
+                <div class="comment-image-div">
+                  <img class="profile comment-image" src="<%=user.image%>" />
+                </div>
+              <% end %>
+              <div class="comment-header">
+                <%=comment.created_at.to_date.strftime('%A')%>
+                <%=comment.created_at.to_date.strftime('%B')%>
+                <%=comment.created_at.to_date.strftime('%d')%>,
+                <%=comment.created_at.to_date.strftime('%Y') %>
+              </div>
+              <div class="well comment-content">
+                <h4>
+                  <%= comment.title %>
+                </h4>
+                <%= comment.content %>
+              </div>
+              <% user = User.find(comment.author_id) %>
+              by <%= link_to user.username, user_path(user), class:'post-link'%><br />
+            </div>
+          <% end %>
+
+        </div>
+        <% end %>
+  <% end %>
+<% else %>
+  <h3>There are no posts yet :( Check back soon :)</h3>
+<% end %>s

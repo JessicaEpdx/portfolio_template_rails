@@ -3,12 +3,14 @@ class CommentsController < ApplicationController
   def new
     @post = Post.find(params[:post_id])
     @comment = @post.comments.new
+    @posts = Post.all
   end
 
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.new(comment_params)
     @comment.author_id = current_user.id
+    @posts = Post.all
     if @comment.save
       flash[:notice] = "You added a comment to the post titled: " + @post.title
       respond_to do |format|
