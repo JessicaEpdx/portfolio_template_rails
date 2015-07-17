@@ -22,21 +22,21 @@ body {
   font-weight: 300;
 }
 
-.comments{
-  display:none;
-}
+// .comments{
+//   display:none;
+// }
 
 // .hide-comments:focus ~ .comments {
 //   display: none;
 // }
-
-.show-comments:focus ~ .comments {
-  display: block;
-}
-
-.hide-comments:hover, .show-comments:hover{
-  cursor:pointer;
-}
+//
+// .show-comments:focus ~ .comments {
+//   display: block;
+// }
+//
+// .hide-comments:hover, .show-comments:hover{
+//   cursor:pointer;
+// }
 
 a:hover{
   text-decoration:none;
