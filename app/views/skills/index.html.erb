@@ -14,7 +14,9 @@
           <%= profile.description %>
         </div>
         <%= link_to 'References', references_path, remote: true, class:'references'%>
-      </div>
+        <%= link_to 'What I recommend', recommendations_path, remote: true, class:'recommendations'%>
+
+    </div>
       <div class="col-sm-4 profile-col-2">
           <img class="profile profile-image home-image" src="<%=profile.image%>" />
           <div class="profile profile-linkedin">
