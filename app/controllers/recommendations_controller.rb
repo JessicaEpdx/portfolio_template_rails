@@ -13,6 +13,7 @@ class RecommendationsController < ApplicationController
   end
 
   def create
+    @recommendations = Recommendation.all
     @recommendation = Recommendation.new(rec_params)
     if @recommendation.save
       respond_to do |format|

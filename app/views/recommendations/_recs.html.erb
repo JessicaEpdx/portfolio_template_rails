@@ -9,9 +9,7 @@
       <h3><%=link_to rec.title, rec.url %></h3>
       recommended by: <em><%=rec.recommender%></em>
       <h4><%= rec.description %></h4>
-      <% if current_user.admin %>
-      
-      <% end %>
+  
     </div>
   </div>
 <% end %>
