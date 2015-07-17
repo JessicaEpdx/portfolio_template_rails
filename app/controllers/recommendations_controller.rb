@@ -20,6 +20,12 @@ class RecommendationsController < ApplicationController
         format.html { redirect_to root_path}
         format.js
       end
+    else
+      flash[:notice] = "Please fill out all fields!"
+      respond_to do |format|
+        format.html { redirect_to questions_path}
+        format.js { render "fail" }
+      end
     end
   end
 
