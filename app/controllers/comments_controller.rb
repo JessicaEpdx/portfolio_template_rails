@@ -11,7 +11,10 @@ class CommentsController < ApplicationController
     @comment.author_id = current_user.id
     if @comment.save
       flash[:notice] = "You added a comment to the post titled: " + @post.title
-      redirect_to posts_path
+      respond_to do |format|
+        format.html { redirect_to posts_path}
+        format.js
+      end
     else
       render :new
     end

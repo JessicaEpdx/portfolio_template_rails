@@ -37,14 +37,16 @@
         </div>
       </div>
       <% if user_signed_in? %>
-        <%= link_to 'Add Comment', new_post_comment_path(post), class:'post-link' %>
+        <%= link_to 'Add Comment', new_post_comment_path(post), class:'post-link add-comment', remote: true %>
         <% if current_user.admin %>
           <%= link_to 'Edit Post', edit_post_path(post), class:'post-link' %>
         <% end %>
       <% end %>
     </div>
+    <div class="comment-form well">
+    </div>
       <% if post.comments.any? %>
-        <span class="show-comments" tabindex="0"><%= post.comments.length %> Comments</span> 
+        <span class="show-comments" tabindex="0"><%= post.comments.length %> Comments</span>
         <span class="comments" >
           <% post.comments.each do |comment| %>
             <div class="comment well">
