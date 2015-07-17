@@ -3,11 +3,11 @@
 
   <% @references.each do |ref|%>
     <ul class="list-unstyled well">
-      <li><h4><%= ref.name %></h4></li>
-      <li><%= ref.job_title %>, <%= ref.employer %></li>
-      <li><%= ref.email %></li>
-      <li><%= ref.phone %></li>
-      <li><%= ref.address %></li>
+      <li><h3><%= ref.name %></h3></li>
+      <li><h5><%= ref.job_title %>, <%= ref.employer %></h5></li>
+      <li><h5><%= ref.email %></h5></li>
+      <li><h5><%= ref.phone %></h5></li>
+      <li><h5><%= ref.address %></h5></li>
     </ul>
   <% end %>
 <% else %>

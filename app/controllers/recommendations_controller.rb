@@ -5,10 +5,18 @@ class RecommendationsController < ApplicationController
   end
 
   def new
-    @recommendation = Recommendation.new
-    respond_to do |format|
-      format.html { redirect_to root_path}
-      format.js
+    @recommendations = Recommendation.all
+    if params[:request_type] == "Close"
+      respond_to do |format|
+        format.html { redirect_to root_path}
+        format.js {render 'close'}
+      end
+    else
+      @recommendation = Recommendation.new
+      respond_to do |format|
+        format.html { redirect_to root_path}
+        format.js
+      end
     end
   end
 
