@@ -1,7 +1,19 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.order(updated_at: :desc)
+    @posts = Post.order(created_at: :desc)
+    if params[:request_type] == "Show"
+      respond_to do |format|
+        format.html { redirect_to root_path}
+        format.js {render 'show'}
+      end
+    end
+    if params[:request_type] == "Hide"
+      respond_to do |format|
+        format.html { redirect_to root_path}
+        format.js {render 'hide'}
+      end
+    end
   end
 
   def new

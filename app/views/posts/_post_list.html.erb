@@ -26,8 +26,12 @@
           <%= post.content %>
         </div>
       </div>
+      <% if post.comments.any? %>
+        <%= link_to post.comments.length.to_s + " Comments", posts_path(:request_type => 'Show'), remote: true, class:"post-link show-comments" %>
+        <%= link_to "Hide Comments", posts_path(:request_type => 'Hide'), remote: true, class:"post-link hide-comments" %>
+      <% end %>
       <% if user_signed_in? %>
-        <%= link_to 'Add Comment', new_post_comment_path(post), class:'post-link add-comment', remote: true %>
+         <%= link_to 'Add Comment', new_post_comment_path(post), class:'post-link add-comment', remote: true %>
         <% if current_user.admin %>
           <%= link_to 'Edit Post', edit_post_path(post), class:'post-link' %>
         <% end %>
@@ -67,4 +71,4 @@
   <% end %>
 <% else %>
   <h3>There are no posts yet :( Check back soon :)</h3>
-<% end %>s
+<% end %>
