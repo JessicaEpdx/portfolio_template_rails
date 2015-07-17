@@ -1,1 +1,12 @@
-Recs
+<%= link_to "What do you like?!", new_recommendation_path, remote: true, class:"add-recommendation" %>
+<% @recommendations.each do |rec| %>
+  <div class="well row recommendation">
+    <div class="col-sm-6">
+      <%=image_tag rec.image, width:160 %>
+    </div>
+    <div class="col-sm-6">
+      <h3><%=link_to rec.title, rec.url %></h3>
+      <h5><%= rec.description %></h5>
+    </div>
+  </div>
+<% end %>
