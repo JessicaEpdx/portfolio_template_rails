@@ -46,7 +46,6 @@
     <div class="comment-form well">
     </div>
       <% if post.comments.any? %>
-        <span class="show-comments" tabindex="0"><%= post.comments.length %> Comments</span>
         <span class="comments" >
           <% post.comments.each do |comment| %>
             <div class="comment well">
