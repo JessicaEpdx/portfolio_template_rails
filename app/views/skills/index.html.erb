@@ -13,11 +13,8 @@
         <div class="profile profile-description">
           <%= profile.description %>
         </div>
-
-        <%= link_to 'References', skills_path, remote: true %>
-
-        </div>
-
+        <%= link_to 'References', references_path, remote: true, class:'references'%>
+      </div>
       <div class="col-sm-4 profile-col-2">
           <img class="profile profile-image home-image" src="<%=profile.image%>" />
           <div class="profile profile-linkedin">
