@@ -30,10 +30,11 @@ group :test, :development do
 end
 
 group :test do
+  gem 'database_cleaner'
   gem 'shoulda-matchers'
   gem 'capybara'
   gem 'factory_girl_rails'
   gem 'simplecov', require: false
-end
+  gem 'poltergeist'
 
-ruby "2.2.0"
+end

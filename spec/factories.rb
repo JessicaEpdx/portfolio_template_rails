@@ -23,4 +23,9 @@ FactoryGirl.define do
     skill_id(1)
     image_url("project.jpg")
   end
+
+  factory(:post) do
+    title('New post!')
+    content('This is information in my new post')
+  end
 end

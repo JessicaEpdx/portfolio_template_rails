@@ -1,3 +1,5 @@
+<h3 class="header">What do you think?</h3>
+<br />
 <%= form_for [@post, @comment], remote:true do |f| %>
   <div class="form-group">
     <%= f.text_field :title, :placeholder => "Comment Title" %>
