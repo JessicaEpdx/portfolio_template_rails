@@ -1,4 +1,5 @@
 <%= link_to "What do you like?!", new_recommendation_path, remote: true, class:"add-recommendation" %>
+
 <% @recommendations.each do |rec| %>
   <div class="well row recommendation">
     <div class="col-sm-6">
@@ -6,7 +7,11 @@
     </div>
     <div class="col-sm-6">
       <h3><%=link_to rec.title, rec.url %></h3>
-      <h5><%= rec.description %></h5>
+      recommended by: <em><%=rec.recommender%></em>
+      <h4><%= rec.description %></h4>
+      <% if current_user.admin %>
+      
+      <% end %>
     </div>
   </div>
 <% end %>

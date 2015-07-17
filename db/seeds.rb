@@ -42,6 +42,6 @@ references = Reference.create([
 ])
 
 recommendations = Recommendation.create([
-  {title:"Codrops", url:"http://tympanus.net/codrops/", image:"http://codropspz.tympanus.netdna-cdn.com/codrops/wp-content/uploads/2015/03/PlayfulTrampolineEffect-105x105.jpg", description:"CoDrops has greta tutorials and is very well organized. I gather a ton of inspiration from there!"},
-  {title:"Awwwards", url:"http://www.awwwards.com/", image:"http://www.awwwards.com/media/cache/thumb_sotd_list/awards/submissions/2015/07/55a6c5acf11ee.jpeg", description:"This site is great for design inspiration, they have some truly unique and beautiful websites, my favorite is the one called The Boat! It's an amazing way to tell a story through an interactive site."}
+  {recommender:'Jessica Engel', title:"Codrops", url:"http://tympanus.net/codrops/", image:"http://codropspz.tympanus.netdna-cdn.com/codrops/wp-content/uploads/2015/03/PlayfulTrampolineEffect-105x105.jpg", description:"CoDrops has greta tutorials and is very well organized. I gather a ton of inspiration from there!"},
+  {recommender:'Jessica Engel', title:"Awwwards", url:"http://www.awwwards.com/", image:"http://www.awwwards.com/media/cache/thumb_sotd_list/awards/submissions/2015/07/55a6c5acf11ee.jpeg", description:"This site is great for design inspiration, they have some truly unique and beautiful websites, my favorite is the one called The Boat! It's an amazing way to tell a story through an interactive site."}
   ])

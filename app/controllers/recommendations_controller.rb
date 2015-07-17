@@ -6,9 +6,25 @@ class RecommendationsController < ApplicationController
 
   def new
     @recommendation = Recommendation.new
+    respond_to do |format|
+      format.html { redirect_to root_path}
+      format.js
+    end
   end
 
   def create
+    @recommendation = Recommendation.new(rec_params)
+    if @recommendation.save
+      respond_to do |format|
+        format.html { redirect_to root_path}
+        format.js
+      end
+    end
+  end
+
+  private
+  def rec_params
+    params.require(:recommendation).permit(:title, :description, :url, :image, :recommender)
   end
 
 end
