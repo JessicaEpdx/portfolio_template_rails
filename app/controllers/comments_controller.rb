@@ -17,7 +17,11 @@ class CommentsController < ApplicationController
         format.js
       end
     else
-      render :new
+      flash[:notice] = "Please fill out title and description"
+      respond_to do |format|
+        format.html { redirect_to posts_path}
+        format.js
+      end
     end
   end
 
